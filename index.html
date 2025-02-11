@@ -109,16 +109,16 @@
         <h2>Photo Gallery</h2>
         <div class="gallery-grid">
             <a href="images/Motorcycle (1).jpg" data-lightbox="gallery" class="gallery-item">
-                <img src="images/Motorcycle (1).jpg" alt="Gallery Image 5">
+                <img src="images/Motorcycle (1).jpg" alt="Gallery Image 1">
             </a>
             <a href="images/Motorcycle (2).jpg" data-lightbox="gallery" class="gallery-item">
-                <img src="images/Motorcycle (2).jpg" alt="Gallery Image 5">
+                <img src="images/Motorcycle (2).jpg" alt="Gallery Image 2">
             </a>
             <a href="images/Motorcycle (3).jpg" data-lightbox="gallery" class="gallery-item">
-                <img src="images/Motorcycle (3).jpg" alt="Gallery Image 7">
+                <img src="images/Motorcycle (3).jpg" alt="Gallery Image 3">
             </a>
             <a href="images/Motorcycle (4).jpg" data-lightbox="gallery" class="gallery-item">
-                <img src="images/Motorcycle (4).jpg" alt="Gallery Image 8">
+                <img src="images/Motorcycle (4).jpg" alt="Gallery Image 4">
             </a>
             <a href="images/Motorcycle (1).jpg" data-lightbox="gallery" class="gallery-item">
                 <img src="images/Motorcycle (1).jpg" alt="Gallery Image 1">
@@ -180,8 +180,8 @@
             $("a[href='#featured-products']").click(function(event) {
                 event.preventDefault();
                 alert("Coming soon!");
-                });
             });
+
             // Handle form submission
             document.getElementById('contact-form').addEventListener('submit', function(event) {
                 event.preventDefault();
@@ -199,13 +199,13 @@
                         alert("There was an error submitting your message. Please try again later.");
                     });
             });
-        if ($("#hamburger").length) {
+
             // Toggle navigation menu on hamburger click
             $("#hamburger").click(function() {
+                console.log("Hamburger clicked");
                 $("#nav-menu").toggleClass("show");
             });
-        }
-    
+        });
     </script>
     <!-- External JavaScript file for lightbox functionality -->
     <!-- This script enables the lightbox effect for the photo gallery -->

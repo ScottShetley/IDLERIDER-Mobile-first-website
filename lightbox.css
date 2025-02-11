@@ -9,9 +9,12 @@
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.lightbox.active {
+    display: flex; /* Show lightbox when active */
 }
 
 .lightbox-content {
