@@ -61,7 +61,7 @@ header nav ul li a {
 
 /* Hamburger menu styles */
 .hamburger {
-    display: none;
+    display: none; /* Default to hidden */
     font-size: 2em;
     background: none;
     border: none;
@@ -76,27 +76,6 @@ header nav ul li a {
 
 /* Show the navigation menu when the 'show' class is added */
 #nav-menu.show {
-    display: block;
-}
-
-/* Additional styles for the hamburger button */
-.hamburger {
-    cursor: pointer;
-    font-size: 24px;
-}
-
-/* Hide the navigation menu by default on smaller screens */
-#nav-menu {
-    display: none;
-}
-
-/* Show the navigation menu when the 'show' class is added */
-#nav-menu.show {
-    display: block;
-}
-
-/* Ensure the hamburger button is visible on smaller screens */
-.hamburger {
     display: block;
 }
 
@@ -410,7 +389,7 @@ header nav ul li a {
     right: 0;
 }
 
-lightbox-prev {
+.lightbox-prev {
     left: 0;
 }
 
