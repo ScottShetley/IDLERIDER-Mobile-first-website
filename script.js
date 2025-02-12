@@ -1,5 +1,23 @@
 // Combined functionality for lightbox and hamburger menu
 document.addEventListener('DOMContentLoaded', function () {
+    // Hamburger menu functionality
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('#nav-menu');
+    const navLinks = document.querySelectorAll('#nav-menu a');
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function () {
+            navMenu.classList.toggle('show');
+        });
+
+        // Hide the navigation menu when a link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                navMenu.classList.remove('show');
+            });
+        });
+    }
+
     // Lightbox functionality for the photo gallery
     const gallery = document.querySelector('.gallery-grid');
 
@@ -94,15 +112,5 @@ document.addEventListener('DOMContentLoaded', function () {
         const newImgSrc = uniqueGalleryArray[newIndex];
         console.log('New Image Source:', newImgSrc);
         openLightbox(`images/${newImgSrc}`);
-    }
-
-    // Hamburger menu functionality
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-
-    if (hamburger && navMenu) {
-        hamburger.addEventListener('click', function() {
-            navMenu.classList.toggle('show');
-        });
     }
 });

@@ -69,7 +69,21 @@ header nav ul li a {
     cursor: pointer;
 }
 
+/* Hide the navigation menu by default */
+#nav-menu {
+    display: none;
+}
 
+/* Show the navigation menu when the 'show' class is added */
+#nav-menu.show {
+    display: block;
+}
+
+/* Additional styles for the hamburger button */
+.hamburger {
+    cursor: pointer;
+    font-size: 24px;
+}
 
 /* Hide the navigation menu by default on smaller screens */
 #nav-menu {
@@ -196,23 +210,39 @@ header nav ul li a {
 /* Featured products section styles */
 #featured-products {
     text-align: center;
+    padding: 1em; /* Add padding to ensure spacing around the section */
 }
 
 #featured-products h2 {
     font-size: 1.5em;
+    margin-bottom: 1em; /* Add margin to create space below the heading */
 }
 
 .product-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1em; /* Adjust the gap between items as needed */
+    justify-content: center; /* Center the grid items */
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .product-card {
     border: 1px solid #cccccc;
     padding: 1em;
     text-align: center;
-    width: 200px;
+    width: 100%; /* Ensure the product card takes full width of the grid column */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
     position: relative;
 }
 
@@ -277,8 +307,20 @@ header nav ul li a {
     gap: 1em; /* Adjust the gap between items as needed */
 }
 
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .gallery-item {
-    width: 450px;
+    width: 100%;
     overflow: hidden;
 }
 
@@ -290,6 +332,107 @@ header nav ul li a {
 
 .gallery-item:hover img {
     transform: scale(1.1);
+}
+
+/* Lightbox Styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox.active {
+    display: flex; /* Show lightbox when active */
+}
+
+.lightbox-content {
+    position: relative;
+    margin: auto;
+    padding: 10px;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+@media (max-width: 600px) {
+    .lightbox-content {
+        width: 100%;
+        max-width: 1000px;
+    }
+}
+
+.lightbox img {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.lightbox-close:hover {
+    color: #ccc;
+}
+
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.3s;
+    border-radius: 3px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.lightbox-next {
+    right: 0;
+}
+
+lightbox-prev {
+    left: 0;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+    .lightbox-prev,
+    .lightbox-next {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .lightbox-prev,
+    .lightbox-next {
+        font-size: 14px;
+        padding: 10px;
+    }
 }
 
 /* About Us section styles */
@@ -392,6 +535,17 @@ footer .social-media a {
     }
 
     nav ul.show {
+        display: flex;
+    }
+}
+
+/* Hide the hamburger button on larger screens */
+@media (min-width: 769px) {
+    .hamburger {
+        display: none;
+    }
+
+    #nav-menu {
         display: flex;
     }
 }
