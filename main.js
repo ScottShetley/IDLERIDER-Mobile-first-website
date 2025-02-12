@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("DOM fully loaded and parsed");
+    console.log("main.js loaded and DOM fully loaded and parsed");
 
     const hamburgerButton = document.querySelector('button.hamburger');
     const navMenu = document.querySelector('nav#nav-menu');
