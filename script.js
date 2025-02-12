@@ -1,4 +1,4 @@
-// Combined functionality for lightbox and hamburger menu
+// Combined functionality for lightbox, hamburger menu, and form submission
 document.addEventListener('DOMContentLoaded', function () {
     // Hamburger menu functionality
     const hamburger = document.querySelector('.hamburger');
@@ -17,6 +17,26 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
+
+    // Handle form submission
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const serviceID = 'service_7ltlnnh'; // Replace with your actual service ID
+        const templateID = 'template_60oy1on'; // Replace with your actual template ID
+        emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+                alert("Thank you for your message! We will get back to you soon.");
+                document.getElementById('contact-form').reset();
+            }, (error) => {
+                alert("There was an error submitting your message. Please try again later.");
+            });
+    });
+
+    // Show popup message when "Shop" link is clicked
+    $("a[href='#featured-products']").click(function(event) {
+        event.preventDefault();
+        alert("Coming soon!");
+    });
 
     // Lightbox functionality for the photo gallery
     const gallery = document.querySelector('.gallery-grid');

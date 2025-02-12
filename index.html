@@ -8,12 +8,9 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="lightbox.css">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com; style-src 'self' https://fonts.googleapis.com; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com;">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script>
-        (function() {
-            emailjs.init("PSIjpqnJskYx3duj1"); // Replace with your actual public key
-        })();
-    </script>
+    <script src="init.js"></script> <!-- Include the new external script -->
 </head>
 <body id="top">
     <!-- Header section with navigation -->
@@ -167,46 +164,8 @@
 
     <!-- jQuery library -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        window.jQuery || document.write('<script src="path/to/local/jquery-3.6.0.min.js"><\/script>');
-    </script>
-    <script>
-        $(document).ready(function() {
-            console.log("jQuery is loaded and ready");
-
-            // Show popup message when "Shop" link is clicked
-            $("a[href='#featured-products']").click(function(event) {
-                event.preventDefault();
-                alert("Coming soon!");
-            });
-
-            // Handle form submission
-            document.getElementById('contact-form').addEventListener('submit', function(event) {
-                event.preventDefault();
-                const serviceID = 'service_7ltlnnh'; // Replace with your actual service ID
-                const templateID = 'template_60oy1on'; // Replace with your actual template ID
-                emailjs.sendForm(serviceID, templateID, this)
-                    .then(() => {
-                        console.log('SUCCESS!');
-                        alert("Thank you for your message! We will get back to you soon.");
-                        document.getElementById('contact-form').reset();
-                    }, (error) => {
-                        console.error('FAILED...', error);
-                        console.error('Error message:', error.text);
-                        console.error('Error stack:', error.stack);
-                        alert("There was an error submitting your message. Please try again later.");
-                    });
-            });
-
-            // Toggle navigation menu on hamburger click
-            $("#hamburger").click(function() {
-                console.log("Hamburger clicked");
-                $("#nav-menu").toggleClass("show");
-            });
-        });
-    </script>
-    <!-- External JavaScript file for lightbox functionality -->
-    <!-- This script enables the lightbox effect for the photo gallery -->
+    <script src="jquery-fallback.js"></script> <!-- Include the new external script -->
+    <script src="main.js"></script> <!-- Include the new external script -->
     <script src="script.js"></script>
 </body>
 </html>
