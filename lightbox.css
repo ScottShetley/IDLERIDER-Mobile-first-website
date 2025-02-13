@@ -1,12 +1,9 @@
 /* Lightbox Styles */
 .lightbox {
     display: none;
-    position: fixed;
+    position: absolute; /* Changed from fixed to absolute */
     z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    /* Removed left, top, width, and height properties */
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.8);
     justify-content: center;
@@ -81,4 +78,20 @@
 .lightbox-prev:hover,
 .lightbox-next:hover {
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+    .lightbox-prev,
+    .lightbox-next {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .lightbox-prev,
+    .lightbox-next {
+        font-size: 14px;
+        padding: 10px;
+    }
 }
