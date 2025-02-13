@@ -306,8 +306,8 @@ header nav ul li a {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1em; /* Adjust the gap between items as needed */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust the minmax value to the desired size */
+    gap: 20px; /* Increase the gap between items if needed */
 }
 
 @media (max-width: 768px) {
@@ -323,7 +323,8 @@ header nav ul li a {
 }
 
 .gallery-item {
-    width: 100%;
+    width: 100%; /* Ensure the gallery items take up the full width of their grid cell */
+    height: auto;
     overflow: hidden;
     position: relative; /* Ensure the image is positioned relative to the gallery item */
 }
@@ -331,6 +332,7 @@ header nav ul li a {
 .gallery-item img {
     width: 100%;
     height: auto;
+    display: block;
     transition: transform 0.3s ease-in-out;
     position: relative; /* Ensure the image is positioned relative to the gallery item */
     z-index: 1; /* Ensure the image is on top */
