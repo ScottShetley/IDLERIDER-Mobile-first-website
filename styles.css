@@ -20,15 +20,15 @@ body {
 
 /* Header styles */
 header {
-    position: sticky;
-    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1em;
-    background-color: #0c0d3b;
-    color: #ffffff;
-    z-index: 1000;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure it stays on top of other content */
 }
 
 header .logo h1 {
@@ -42,8 +42,24 @@ header .logo h1 {
 }
 
 header .logo h1 a {
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
+}
+
+#nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+#nav-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#nav-menu ul li a:hover {
+    text-decoration: underline;
 }
 
 header nav ul {
@@ -68,11 +84,19 @@ header nav ul li a {
     color: white;
     cursor: pointer;
 }
-
+.nav-menu {
+    display: none; /* Initially hide the navigation menu */
+    /* Add other styles for the navigation menu here */
+  }
 /* Hide the navigation menu by default */
-#nav-menu {
-    display: none;
-}
+.nav-menu {
+    display: none; /* Initially hide the navigation menu */
+    /* Add other styles for the navigation menu here */
+  }
+  
+  .nav-menu.active {
+    display: block; /* Show the navigation menu when the active class is present */
+  }
 
 /* Show the navigation menu when the 'show' class is added */
 #nav-menu.show {
@@ -392,7 +416,7 @@ header nav ul li a {
     right: 0;
 }
 
-.lightbox-prev {
+lightbox-prev {
     left: 0;
 }
 
