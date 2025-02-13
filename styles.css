@@ -21,7 +21,7 @@ body {
 /* Header styles */
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Center the header content */
     align-items: center;
     padding: 10px 20px;
     background-color: #333;
@@ -46,16 +46,34 @@ header .logo h1 a {
     text-decoration: none;
 }
 
+#nav-menu {
+    width: 100%; /* Set the width to 100% */
+    justify-content: center; /* Center the navigation menu */
+    margin: auto; /* Center the navigation menu */
+}
+
 #nav-menu ul {
     list-style: none;
     display: flex;
     gap: 20px;
+    padding: 0;
+    margin: auto; /* Center the ul element */
+    position: relative; /* Set position to relative */
+    left: auto; /* Reset left position */
+    right: auto; /* Reset right position */
+    top: auto; /* Reset top position */
+    bottom: auto; /* Reset bottom position */
+}
+
+#nav-menu ul li {
+    display: inline-block;
 }
 
 #nav-menu ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 16px;
+    padding: 10px;
 }
 
 #nav-menu ul li a:hover {
@@ -84,19 +102,15 @@ header nav ul li a {
     color: white;
     cursor: pointer;
 }
+
 .nav-menu {
     display: none; /* Initially hide the navigation menu */
     /* Add other styles for the navigation menu here */
-  }
-/* Hide the navigation menu by default */
-.nav-menu {
-    display: none; /* Initially hide the navigation menu */
-    /* Add other styles for the navigation menu here */
-  }
-  
-  .nav-menu.active {
+}
+
+.nav-menu.active {
     display: block; /* Show the navigation menu when the active class is present */
-  }
+}
 
 /* Show the navigation menu when the 'show' class is added */
 #nav-menu.show {
@@ -132,6 +146,32 @@ header nav ul li a {
 
     nav ul.show {
         display: flex;
+    }
+
+    #nav-menu ul {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    #nav-menu ul li a {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #nav-menu ul .nav-item {
+        display: none;
+    }
+
+    #nav-menu ul {
+        justify-content: center;
+    }
+
+    #nav-menu ul li:first-child {
+        margin-left: auto;
+    }
+
+    #nav-menu ul li:last-child {
+        margin-right: auto;
     }
 }
 
@@ -513,4 +553,58 @@ footer .social-media a {
     color: #ffffff;
     text-decoration: none;
     margin: 0 0.5em;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    #nav-menu ul {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    #nav-menu ul li a {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #nav-menu ul .nav-item {
+        display: none;
+    }
+
+    #nav-menu ul {
+        justify-content: center;
+    }
+
+    #nav-menu ul li:first-child {
+        margin-left: auto;
+    }
+
+    #nav-menu ul li:last-child {
+        margin-right: auto;
+    }
+}
+
+/* Back to top button */
+.back-to-top {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+.back-to-top:hover {
+    background-color: #555;
+}
+
+/* Show the button when scrolling down */
+@media (max-width: 768px) {
+    .back-to-top {
+        display: block;
+    }
 }
