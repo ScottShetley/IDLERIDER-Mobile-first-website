@@ -24,7 +24,7 @@ header {
     justify-content: space-between; /* Space between logo and nav menu */
     align-items: center;
     padding: 10px 20px;
-    background-color: #333;
+    background-color: #0c0d3b; /* Dark blue */
     color: #fff;
     position: sticky;
     top: 0;
@@ -34,7 +34,7 @@ header {
 header .logo h1 {
     font-family: 'Anton', sans-serif;
     font-size: 2em;
-    background-color: rgba(128, 128, 128, 0.7);
+    background-color: #0c0d3b; /* Dark blue */ /* Change back to original background */
     padding: 0.5em 1em;
     border-radius: 5px;
     margin: 0;
@@ -49,7 +49,8 @@ header .logo h1 a {
 #nav-menu {
     display: flex;
     justify-content: flex-end; /* Align nav menu to the right */
-    width: 100%;
+    align-items: center; /* Center align items vertically */
+    width: auto;
 }
 
 #nav-menu ul {
@@ -58,6 +59,13 @@ header .logo h1 a {
     gap: 20px;
     padding: 0;
     margin: 0;
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    width: auto;
+    text-align: left;
 }
 
 #nav-menu ul li {
@@ -65,7 +73,7 @@ header .logo h1 a {
 }
 
 #nav-menu ul li a {
-    color: #fff;
+    color: #fff; /* Ensure the same color as the header */
     text-decoration: none;
     font-size: 16px;
     padding: 10px;
@@ -129,7 +137,7 @@ header nav ul li a {
     nav ul {
         display: none;
         flex-direction: column;
-        background-color: #333;
+        background-color: #0c0d3b; /* Dark blue */
         position: absolute;
         top: 60px;
         right: 0;
@@ -465,7 +473,7 @@ lightbox-prev {
     left: 0;
 }
 
-.lightbox-prev:hover,
+lightbox-prev:hover,
 .lightbox-next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
@@ -610,4 +618,18 @@ footer .social-media a {
     .back-to-top {
         display: block;
     }
+}
+
+/* Additional Media Query for smaller screens */
+@media (max-width: 425px) {
+  /* Assuming the great-grandparent is a div or nav */
+  div, nav {
+    justify-content: flex-end;
+    width: 100%;
+  }
+  /* Assuming the grandparent is a ul or nav */
+  ul, nav {
+    justify-content: flex-end;
+    width: 100%;
+  }
 }
