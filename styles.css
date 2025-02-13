@@ -21,7 +21,7 @@ body {
 /* Header styles */
 header {
     display: flex;
-    justify-content: center; /* Center the header content */
+    justify-content: space-between; /* Space between logo and nav menu */
     align-items: center;
     padding: 10px 20px;
     background-color: #333;
@@ -47,9 +47,9 @@ header .logo h1 a {
 }
 
 #nav-menu {
-    width: 100%; /* Set the width to 100% */
-    justify-content: center; /* Center the navigation menu */
-    margin: auto; /* Center the navigation menu */
+    display: flex;
+    justify-content: flex-end; /* Align nav menu to the right */
+    width: 100%;
 }
 
 #nav-menu ul {
@@ -57,12 +57,7 @@ header .logo h1 a {
     display: flex;
     gap: 20px;
     padding: 0;
-    margin: auto; /* Center the ul element */
-    position: relative; /* Set position to relative */
-    left: auto; /* Reset left position */
-    right: auto; /* Reset right position */
-    top: auto; /* Reset top position */
-    bottom: auto; /* Reset bottom position */
+    margin: 0;
 }
 
 #nav-menu ul li {
@@ -119,6 +114,14 @@ header nav ul li a {
 
 /* Media Queries for Mobile Devices */
 @media (max-width: 768px) {
+    header {
+        justify-content: center; /* Center the header content on mobile */
+    }
+
+    #nav-menu {
+        justify-content: center; /* Center the navigation menu on mobile */
+    }
+
     .hamburger {
         display: block;
     }
