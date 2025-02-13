@@ -34,7 +34,7 @@ header {
 header .logo h1 {
     font-family: 'Anton', sans-serif;
     font-size: 2em;
-    background-color: #0c0d3b; /* Dark blue */ /* Change back to original background */
+    background-color: #0c0d3b; /* Dark blue */
     padding: 0.5em 1em;
     border-radius: 5px;
     margin: 0;
@@ -96,111 +96,15 @@ header nav ul li a {
     padding: 0.65em 0.9em;
 }
 
-/* Hamburger menu styles */
-.hamburger {
-    display: none; /* Default to hidden */
-    font-size: 2em;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-}
-
-.nav-menu {
-    display: none; /* Initially hide the navigation menu */
-    /* Add other styles for the navigation menu here */
-}
-
-.nav-menu.active {
-    display: block; /* Show the navigation menu when the active class is present */
-}
-
-/* Show the navigation menu when the 'show' class is added */
-#nav-menu.show {
-    display: block !important; /* Ensure it overrides any other display styles */
-}
-
-/* Media Queries for Mobile Devices */
-@media (max-width: 768px) {
-    header {
-        justify-content: center; /* Center the header content on mobile */
-    }
-
-    #nav-menu {
-        justify-content: center; /* Center the navigation menu on mobile */
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    nav ul {
-        display: none;
-        flex-direction: column;
-        background-color: #0c0d3b; /* Dark blue */
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 200px;
-        text-align: right;
-    }
-
-    nav ul li {
-        display: block;
-        padding: 1em;
-    }
-
-    nav ul li a {
-        color: white;
-        text-decoration: none;
-    }
-
-    nav ul.show {
-        display: flex;
-    }
-
-    #nav-menu ul {
-        flex-direction: row;
-        gap: 10px;
-    }
-
-    #nav-menu ul li a {
-        font-size: 14px;
-        padding: 8px;
-    }
-
-    #nav-menu ul .nav-item {
-        display: none;
-    }
-
-    #nav-menu ul {
-        justify-content: center;
-    }
-
-    #nav-menu ul li:first-child {
-        margin-left: auto;
-    }
-
-    #nav-menu ul li:last-child {
-        margin-right: auto;
-    }
-}
-
-/* Hide the hamburger button on larger screens */
-@media (min-width: 769px) {
-    .hamburger {
-        display: none;
-    }
-
-    #nav-menu {
-        display: flex;
-    }
-}
-
 /* Hero section styles */
 #hero {
     position: relative;
     overflow: hidden;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center; /* Center text */
+    height: 100vh; /* Full viewport height */
 }
 
 .hero-image-container {
@@ -221,7 +125,6 @@ header nav ul li a {
     position: relative;
     z-index: 1;
     color: white;
-    text-align: center;
     padding: 0 1em;
     display: flex;
     flex-direction: column;
@@ -232,8 +135,7 @@ header nav ul li a {
     font-family: 'Anton', sans-serif;
     font-size: 3em;
     margin-bottom: 0.5em;
-    background-color: rgba(128, 128, 128, 0.5);
-    display: inline-block;
+    background-color: rgba(128, 128, 128, 0.7); /* Semi-transparent grey background */
     padding: 0.5em 1em;
     border-radius: 5px;
     text-shadow: 3px 3px 5px #0c0d3b;
@@ -241,8 +143,7 @@ header nav ul li a {
 
 #hero p {
     font-size: 1.2em;
-    background-color: rgba(128, 128, 128, 0.5);
-    display: inline-block;
+    background-color: rgba(128, 128, 128, 0.7); /* Semi-transparent grey background */
     padding: 0.5em 1em;
     border-radius: 5px;
     margin-top: 1em; /* Add margin-top to create space between h1 and p */
@@ -393,107 +294,6 @@ header nav ul li a {
     transform: scale(1.1);
 }
 
-/* Lightbox Styles */
-.lightbox {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-}
-
-.lightbox.active {
-    display: flex; /* Show lightbox when active */
-}
-
-.lightbox-content {
-    position: relative;
-    margin: auto;
-    padding: 10px;
-    max-width: 80%;
-    max-height: 80%;
-}
-
-@media (max-width: 600px) {
-    .lightbox-content {
-        width: 100%;
-        max-width: 1000px;
-    }
-}
-
-.lightbox img {
-    width: 100%;
-    height: auto;
-    max-height: 100%;
-}
-
-.lightbox-close {
-    position: absolute;
-    top: 10px;
-    right: 25px;
-    color: #fff;
-    font-size: 35px;
-    font-weight: bold;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.lightbox-close:hover {
-    color: #ccc;
-}
-
-.lightbox-prev,
-.lightbox-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: auto;
-    padding: 16px;
-    margin-top: -50px;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    transition: 0.3s;
-    border-radius: 3px;
-    user-select: none;
-    cursor: pointer;
-}
-
-.lightbox-next {
-    right: 0;
-}
-
-lightbox-prev {
-    left: 0;
-}
-
-lightbox-prev:hover,
-.lightbox-next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-@media (max-width: 768px) {
-    .lightbox-prev,
-    .lightbox-next {
-        font-size: 16px;
-        padding: 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    .lightbox-prev,
-    .lightbox-next {
-        font-size: 14px;
-        padding: 10px;
-    }
-}
-
 /* About Us section styles */
 #about {
     text-align: center;
@@ -622,14 +422,14 @@ footer .social-media a {
 
 /* Additional Media Query for smaller screens */
 @media (max-width: 425px) {
-  /* Assuming the great-grandparent is a div or nav */
-  div, nav {
-    justify-content: flex-end;
-    width: 100%;
-  }
-  /* Assuming the grandparent is a ul or nav */
-  ul, nav {
-    justify-content: flex-end;
-    width: 100%;
-  }
+    /* Assuming the great-grandparent is a div or nav */
+    div, nav {
+        justify-content: flex-end;
+        width: 100%;
+    }
+    /* Assuming the grandparent is a ul or nav */
+    ul, nav {
+        justify-content: flex-end;
+        width: 100%;
+    }
 }

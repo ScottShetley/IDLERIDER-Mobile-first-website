@@ -3,23 +3,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // Ensure jQuery is available
     if (window.jQuery) {
         // Hamburger menu functionality
-        const hamburger = document.querySelector('.hamburger');
+        
         const navMenu = document.querySelector('#nav-menu');
         const navLinks = document.querySelectorAll('#nav-menu a');
 
-        if (hamburger && navMenu) {
-            hamburger.addEventListener('click', () => {
-                console.log("Hamburger clicked");
-                navMenu.classList.toggle('show');
-                console.log("Show class toggled:", navMenu.classList.contains('show'));
-            });
-
-            // Hide the navigation menu when a link is clicked
-            navLinks.forEach(link => {
-                link.addEventListener('click', function () {
-                    navMenu.classList.remove('show');
-                });
-            });
+       
         }
 
         // Handle form submission
@@ -42,43 +30,8 @@ document.addEventListener('DOMContentLoaded', function () {
             alert("Coming soon!");
         });
 
-        // Lightbox functionality for the photo gallery
-        const galleryItems = document.querySelectorAll('.gallery-item img');
-        const lightbox = document.querySelector('.lightbox');
-        const lightboxImage = lightbox.querySelector('img');
-        const closeButton = lightbox.querySelector('.lightbox-close');
-        const prevButton = lightbox.querySelector('.lightbox-prev');
-        const nextButton = lightbox.querySelector('.lightbox-next');
-        let currentIndex = 0;
-
-        function openLightbox(index) {
-            currentIndex = index;
-            lightboxImage.src = galleryItems[currentIndex].src;
-            lightbox.classList.add('active');
-        }
-
-        function closeLightbox() {
-            lightbox.classList.remove('active');
-        }
-
-        function showPrevImage() {
-            currentIndex = (currentIndex > 0) ? currentIndex - 1 : galleryItems.length - 1;
-            lightboxImage.src = galleryItems[currentIndex].src;
-        }
-
-        function showNextImage() {
-            currentIndex = (currentIndex < galleryItems.length - 1) ? currentIndex + 1 : 0;
-            lightboxImage.src = galleryItems[currentIndex].src;
-        }
-
-        galleryItems.forEach((item, index) => {
-            item.addEventListener('click', () => openLightbox(index));
-        });
-
-        closeButton.addEventListener('click', closeLightbox);
-        prevButton.addEventListener('click', showPrevImage);
-        nextButton.addEventListener('click', showNextImage);
-    } else {
+       
+     {
         console.error("jQuery is not loaded");
     }
 });
