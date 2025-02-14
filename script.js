@@ -2,29 +2,69 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Ensure jQuery is available
     if (window.jQuery) {
-        // Hamburger menu functionality
-        const navMenu = document.querySelector('#nav-menu');
-        const navLinks = document.querySelectorAll('#nav-menu a');
-
-        // Handle form submission
+        // Handle contact form submission
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault();
-            const serviceID = 'service_7ltlnnh'; // Replace with your actual service ID
-            const templateID = 'template_60oy1on'; // Replace with your actual template ID
-            emailjs.sendForm(serviceID, templateID, this)
-                .then(() => {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            fetch('https://script.google.com/macros/s/AKfycbwqYtQy9TugvsyBcUXxJu5hPHePyfC-A3bXlDlL0vj5MqZUwsqVhH8ouXiRsHpuGM3N/exec', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name: name, email: email, message: message })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.result === 'success') {
                     alert("Thank you for your message! We will get back to you soon.");
                     document.getElementById('contact-form').reset();
-                }, (error) => {
-                    alert("There was an error submitting your message. Please try again later.");
-                });
+                } else {
+                    alert("There was an error sending your message. Please try again later.");
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert("There was an error sending your message. Please try again later.");
+            });
         });
 
-        // Remove popup message for "Products" link
-        $("a[href='#featured-products']").click(function(event) {
+        // Handle newsletter form submission
+        document.getElementById('newsletter-form').addEventListener('submit', function(event) {
             event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+
+            fetch('https://script.google.com/macros/s/AKfycbwqYtQy9TugvsyBcUXxJu5hPHePyfC-A3bXlDlL0vj5MqZUwsqVhH8ouXiRsHpuGM3N/exec', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name: name, email: email })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.result === 'success') {
+                    alert("Thank you for signing up! Your information has been saved.");
+                    document.getElementById('newsletter-form').reset();
+                } else {
+                    alert("There was an error signing up. Please try again later.");
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert("There was an error signing up. Please try again later.");
+            });
+        });
+
+        // Smooth scroll for all navigation links
+        $('#nav-menu a').click(function(event) {
+            event.preventDefault();
+            const target = $(this).attr('href');
             $('html, body').animate({
-                scrollTop: $("#featured-products").offset().top
+                scrollTop: $(target).offset().top
             }, 1000);
         });
 

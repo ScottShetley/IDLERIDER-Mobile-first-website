@@ -8,10 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-abc123' https://cdn.jsdelivr.net https://code.jquery.com; style-src 'self' https://fonts.googleapis.com https://cdn.jsdelivr.net; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-abc123' https://cdn.jsdelivr.net https://code.jquery.com https://script.google.com; style-src 'self' https://fonts.googleapis.com https://cdn.jsdelivr.net; img-src 'self' data: https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net;">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" nonce="abc123"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" nonce="abc123"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" nonce="abc123"></script>
     <script src="init.js" nonce="abc123"></script>
     <script src="main.js" nonce="abc123"></script>
     <script src="script.js" nonce="abc123"></script>
@@ -53,21 +52,21 @@
         <div class="product-grid">
             <div class="product-card" data-id="1" data-name="Product 1" data-price="29.99">
                 <img src="images/IDLERIDER_grey_badge.png" alt="Product 1">
-                <div class="ribbon">UNDER CONSTRUCTION</div>
+                <div class="ribbon">COMING SOON</div>
                 <h3>Product 1</h3>
                 <p>$29.99</p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>
             <div class="product-card" data-id="2" data-name="Product 2" data-price="39.99">
                 <img src="images/IDLERIDER_grey_badge.png" alt="Product 2">
-                <div class="ribbon">UNDER CONSTRUCTION</div>
+                <div class="ribbon">COMING SOON</div>
                 <h3>Product 2</h3>
                 <p>$39.99</p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>
             <div class="product-card" data-id="3" data-name="Product 3" data-price="49.99">
                 <img src="images/IDLERIDER_grey_badge.png" alt="Product 3">
-                <div class="ribbon">UNDER CONSTRUCTION</div>
+                <div class="ribbon">COMING SOON</div>
                 <h3>Product 3</h3>
                 <p>$49.99</p>
                 <button class="add-to-cart">Add to Cart</button>
@@ -82,13 +81,37 @@
         <p>We hope you enjoy our products as much as we enjoy offering them to you. If you have any questions or comments, please don't hesitate to contact us. You can also message us directly on our <a href="https://www.instagram.com/idleridercommunity/" target="_blank">Instagram</a> or join our <a href="https://www.facebook.com/groups/3870428323276333" target="_blank">Facebook group</a>.</p>
     </section>
 
+    <!-- Contact Form -->
     <section id="contact" class="full-screen-section">
         <h2>Contact Us</h2>
-        <form id="contact-form">
+        <form id="contact-form" method="POST">
             <input type="hidden" name="contact_number" value="697483">
             <label for="name">Name</label>
             <input type="text" id="name" name="user_name" autocomplete="name" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="user_email" autocomplete="email" required>
+            <label for="message">Message</label>
+            <textarea id="message" name="user_message" required></textarea>
+            <button type="submit">Send</button>
         </form>
     </section>
+
+    <!-- Newsletter Form -->
+    <section id="newsletter" class="full-screen-section">
+        <h2>Sign Up for Our Newsletter</h2>
+        <p>Our site is still under construction, but you can sign up to receive updates and be the first to know when we launch!</p>
+        <form id="newsletter-form" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="user_name" autocomplete="name" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="user_email" autocomplete="email" required>
+            <button type="submit">Sign Up</button>
+        </form>
+    </section>
+
+    <script src="init.js" nonce="abc123"></script>
+    <script src="main.js" nonce="abc123"></script>
+    <script src="script.js" nonce="abc123"></script>
+    <script src="cart.js" nonce="abc123"></script>
 </body>
 </html>

@@ -443,3 +443,81 @@ footer .social-media a {
 .slick-loading .slick-list {
     background: url('images/ajax-loader.gif') center center no-repeat #fff; /* Ensure this path matches the location of the image */
 }
+
+/* Ensure the newsletter section is visible */
+#newsletter {
+    display: block;
+    visibility: visible;
+}
+
+/* Base styles for the newsletter section */
+#newsletter {
+    text-align: center;
+    padding: 2em 1em; /* Add padding to ensure spacing around the section */
+    background-color: #f9f9f9; /* Optional: Add a background color */
+}
+
+#newsletter h2 {
+    font-size: 1.5em;
+    margin-bottom: 1em; /* Add margin to create space below the heading */
+}
+
+#newsletter p {
+    font-size: 1em;
+    margin-bottom: 1em; /* Add margin to create space below the paragraph */
+}
+
+#newsletter form {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1em; /* Add gap between form elements */
+}
+
+#newsletter form label {
+    font-size: 1em;
+}
+
+#newsletter form input,
+#newsletter form textarea {
+    padding: 0.5em;
+    font-size: 1em;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+#newsletter form button {
+    padding: 0.5em 1em;
+    font-size: 1em;
+    background-color: #0c0d3b;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    #newsletter {
+        padding: 1em; /* Adjust padding for smaller screens */
+    }
+
+    #newsletter h2 {
+        font-size: 1.2em; /* Adjust font size for smaller screens */
+    }
+
+    #newsletter form {
+        width: 100%; /* Ensure the form takes full width on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    #newsletter h2 {
+        font-size: 1em; /* Further adjust font size for very small screens */
+    }
+
+    #newsletter form {
+        gap: 0.5em; /* Adjust gap between form elements for very small screens */
+    }
+}
