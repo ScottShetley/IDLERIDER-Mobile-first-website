@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             localStorage.setItem('cart', JSON.stringify(cart));
-            window.location.href = 'cart.html'; // Redirect to cart page
+            alert(`${productName} has been added to your cart.`);
         });
     } else {
         console.error("jQuery is not loaded");
