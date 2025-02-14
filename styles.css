@@ -1,10 +1,56 @@
-/* General Styles */
+/* Base styles for mobile-first */
 body {
     font-family: 'Anton', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #ffffff;
     color: #0c0d3b;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #0c0d3b; /* Dark blue */
+    color: #fff;
+}
+
+.logo h1 a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em; /* Adjust the logo size */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+
+.header-icons a {
+    margin-left: 20px;
+}
+
+.header-icons img {
+    width: 24px;
+    height: 24px;
+   
 }
 
 /* Full screen sections */
@@ -14,7 +60,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2em;
+    padding: 20px;
     box-sizing: border-box;
 }
 
@@ -23,7 +69,7 @@ header {
     display: flex;
     justify-content: space-between; /* Space between logo and nav menu */
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 20px; /* Adjust padding for better spacing */
     background-color: #0c0d3b; /* Dark blue */
     color: #fff;
     position: sticky;
@@ -33,12 +79,8 @@ header {
 
 header .logo h1 {
     font-family: 'Anton', sans-serif;
-    font-size: 2em;
-    background-color: #0c0d3b; /* Dark blue */
-    padding: 0.5em 1em;
-    border-radius: 5px;
+    font-size: 1.8em; /* Adjust the logo size */
     margin: 0;
-    text-shadow: 3px 3px 5px #0c0d3b;
 }
 
 header .logo h1 a {
@@ -59,13 +101,6 @@ header .logo h1 a {
     gap: 20px;
     padding: 0;
     margin: 0;
-    position: relative;
-    left: auto;
-    right: auto;
-    top: auto;
-    bottom: auto;
-    width: auto;
-    text-align: left;
 }
 
 #nav-menu ul li {
@@ -162,6 +197,23 @@ header nav ul li a {
     margin-right: auto;
 }
 
+/* Carousel styles */
+#main-carousel {
+    width: 100%;
+    margin: 0 auto;
+    padding: 2em 0;
+}
+
+.carousel {
+    width: 100%;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100vh; /* Make the image take up the full height of the viewport */
+    object-fit: cover; /* Ensure the image covers the entire section */
+}
+
 /* Featured products section styles */
 #featured-products {
     text-align: center;
@@ -175,8 +227,8 @@ header nav ul li a {
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1em; /* Adjust the gap between items as needed */
+    grid-template-columns: 1fr;
+    gap: 20px; /* Adjust the gap between items as needed */
     justify-content: center; /* Center the grid items */
 }
 
@@ -192,9 +244,21 @@ header nav ul li a {
     }
 }
 
+@media (min-width: 600px) {
+    .product-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .product-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
 .product-card {
-    border: 1px solid #cccccc;
-    padding: 1em;
+    border: 1px solid #ccc;
+    padding: 10px;
     text-align: center;
     width: 100%; /* Ensure the product card takes full width of the grid column */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
@@ -228,70 +292,12 @@ header nav ul li a {
 /* Ribbon styles */
 .ribbon {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
-    width: 250px;
-    background: repeating-linear-gradient(
-        45deg,
-        yellow,
-        yellow 10px,
-        black 10px,
-        black 20px
-    );
-    color: white;
-    text-align: center;
-    line-height: 30px;
-    font-size: 1.2em;
-    z-index: 1;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
-
-/* Photo gallery section styles */
-#photo-gallery {
-    text-align: center;
-}
-
-#photo-gallery h2 {
-    font-size: 1.5em;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust the minmax value to the desired size */
-    gap: 20px; /* Increase the gap between items if needed */
-}
-
-@media (max-width: 768px) {
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 480px) {
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-.gallery-item {
-    width: 100%; /* Ensure the gallery items take up the full width of their grid cell */
-    height: auto;
-    overflow: hidden;
-    position: relative; /* Ensure the image is positioned relative to the gallery item */
-}
-
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.3s ease-in-out;
-    position: relative; /* Ensure the image is positioned relative to the gallery item */
-    z-index: 1; /* Ensure the image is on top */
-}
-
-.gallery-item:hover img {
-    transform: scale(1.1);
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: #fff;
+    padding: 5px;
+    font-size: 12px;
 }
 
 /* About Us section styles */
@@ -432,4 +438,8 @@ footer .social-media a {
         justify-content: flex-end;
         width: 100%;
     }
+}
+
+.slick-loading .slick-list {
+    background: url('images/ajax-loader.gif') center center no-repeat #fff; /* Ensure this path matches the location of the image */
 }

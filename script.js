@@ -3,12 +3,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Ensure jQuery is available
     if (window.jQuery) {
         // Hamburger menu functionality
-        
         const navMenu = document.querySelector('#nav-menu');
         const navLinks = document.querySelectorAll('#nav-menu a');
-
-       
-        }
 
         // Handle form submission
         document.getElementById('contact-form').addEventListener('submit', function(event) {
@@ -29,9 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
             event.preventDefault();
             alert("Coming soon!");
         });
-
-       
-     {
+    } else {
         console.error("jQuery is not loaded");
     }
 });
