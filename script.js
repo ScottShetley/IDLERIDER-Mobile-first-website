@@ -20,10 +20,32 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
         });
 
-        // Show popup message when "Shop" link is clicked
+        // Remove popup message for "Products" link
         $("a[href='#featured-products']").click(function(event) {
             event.preventDefault();
-            alert("Coming soon!");
+            $('html, body').animate({
+                scrollTop: $("#featured-products").offset().top
+            }, 1000);
+        });
+
+        // Add to cart functionality
+        $('.add-to-cart').on('click', function() {
+            const productCard = $(this).closest('.product-card');
+            const productId = productCard.data('id');
+            const productName = productCard.data('name');
+            const productPrice = productCard.data('price');
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingProduct = cart.find(product => product.id === productId);
+
+            if (existingProduct) {
+                existingProduct.quantity += 1;
+            } else {
+                cart.push({ id: productId, name: productName, price: productPrice, quantity: 1 });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            window.location.href = 'cart.html'; // Redirect to cart page
         });
     } else {
         console.error("jQuery is not loaded");

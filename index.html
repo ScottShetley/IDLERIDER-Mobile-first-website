@@ -15,6 +15,7 @@
     <script src="init.js" nonce="abc123"></script>
     <script src="main.js" nonce="abc123"></script>
     <script src="script.js" nonce="abc123"></script>
+    <script src="cart.js" nonce="abc123"></script>
 </head>
 <body>
     <header>
@@ -36,19 +37,6 @@
         </div>
     </header>
 
-    <!-- Remove the hero section -->
-    <!-- <section id="hero" class="full-screen-section">
-        <div class="hero-image-container">
-            <img src="images/Hero2.jpg" alt="Hero Image" class="hero-image">
-        </div>
-        <div class="hero-text">
-            <h1>Welcome to IDLERIDER, a motorcycle lifestyle brand</h1>
-            <p>Discover our exclusive merchandise and join our community.</p>
-            <button>Shop Now</button>
-        </div>
-    </section> -->
-
-    <!-- Move the carousel to the hero section position -->
     <section id="main-carousel" class="full-screen-section">
         <div class="carousel">
             <!-- Add your images here -->
@@ -63,47 +51,26 @@
     <section id="featured-products" class="full-screen-section">
         <h2>Featured Products</h2>
         <div class="product-grid">
-            <div class="product-card">
-                <img src="images/IDLERIDER_grey_badge.png" alt="Product 4">
-                <div class="ribbon">UNDER CONSTRUCTION</div>
-                <h3>Product 1</h3>
-                <p>$29.99</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="images/IDLERIDER_grey_badge.png" alt="Product 4">
-                <div class="ribbon">UNDER CONSTRUCTION</div>
-                <h3>Product 2</h3>
-                <p>$39.99</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="images/IDLERIDER_grey_badge.png" alt="Product 6">
-                <div class="ribbon">UNDER CONSTRUCTION</div>
-                <h3>Product 3</h3>
-                <p>$49.99</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product-card">
+            <div class="product-card" data-id="1" data-name="Product 1" data-price="29.99">
                 <img src="images/IDLERIDER_grey_badge.png" alt="Product 1">
                 <div class="ribbon">UNDER CONSTRUCTION</div>
                 <h3>Product 1</h3>
                 <p>$29.99</p>
-                <button>Add to Cart</button>
+                <button class="add-to-cart">Add to Cart</button>
             </div>
-            <div class="product-card">
+            <div class="product-card" data-id="2" data-name="Product 2" data-price="39.99">
                 <img src="images/IDLERIDER_grey_badge.png" alt="Product 2">
                 <div class="ribbon">UNDER CONSTRUCTION</div>
                 <h3>Product 2</h3>
                 <p>$39.99</p>
-                <button>Add to Cart</button>
+                <button class="add-to-cart">Add to Cart</button>
             </div>
-            <div class="product-card">
+            <div class="product-card" data-id="3" data-name="Product 3" data-price="49.99">
                 <img src="images/IDLERIDER_grey_badge.png" alt="Product 3">
                 <div class="ribbon">UNDER CONSTRUCTION</div>
                 <h3>Product 3</h3>
                 <p>$49.99</p>
-                <button>Add to Cart</button>
+                <button class="add-to-cart">Add to Cart</button>
             </div>
         </div>
     </section>
@@ -123,44 +90,5 @@
             <input type="text" id="name" name="user_name" autocomplete="name" required>
         </form>
     </section>
-
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('.carousel').slick({
-                dots: true,
-                infinite: true,
-                speed: 500,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 2000,
-                responsive: [
-                    {
-                        breakpoint: 1024,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                            infinite: true,
-                            dots: true
-                        }
-                    },
-                    {
-                        breakpoint: 600,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    },
-                    {
-                        breakpoint: 480,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    }
-                ]
-            });
-        });
-    </script>
 </body>
 </html>
