@@ -357,6 +357,54 @@ header nav ul li a {
     cursor: pointer;
 }
 
+/* Combined Contact and Newsletter Section Styles */
+#contact-newsletter {
+    text-align: center;
+    padding: 2em 1em; /* Add padding to ensure spacing around the section */
+    background-color: #f9f9f9; /* Optional: Add a background color */
+}
+
+#contact-newsletter h2 {
+    font-size: 1.5em;
+    margin-bottom: 1em; /* Add margin to create space below the heading */
+}
+
+#contact-newsletter p {
+    font-size: 1em;
+    margin-bottom: 1em; /* Add margin to create space below the paragraph */
+}
+
+#contact-newsletter form {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1em; /* Add gap between form elements */
+    margin-bottom: 2em; /* Add margin to separate the forms */
+}
+
+#contact-newsletter form label {
+    font-size: 1em;
+}
+
+#contact-newsletter form input,
+#contact-newsletter form textarea {
+    padding: 0.5em;
+    font-size: 1em;
+    border: 1px solid #cccccc; /* Grey border */
+    border-radius: 5px;
+}
+
+#contact-newsletter form button {
+    padding: 0.5em 1em;
+    font-size: 1em;
+    background-color: #0c0d3b; /* Dark blue background */
+    color: #ffffff; /* White text */
+    border: none;
+    cursor: pointer;
+}
+
 /* Footer section styles */
 footer {
     text-align: center;
