@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // Handle contact form submission
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
+            const name = document.getElementById('contact-name').value;
+            const email = document.getElementById('contact-email').value;
             const message = document.getElementById('message').value;
 
             fetch('https://script.google.com/macros/s/AKfycbwqYtQy9TugvsyBcUXxJu5hPHePyfC-A3bXlDlL0vj5MqZUwsqVhH8ouXiRsHpuGM3N/exec', {
@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // Handle newsletter form submission
         document.getElementById('newsletter-form').addEventListener('submit', function(event) {
             event.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
+            const name = document.getElementById('newsletter-name').value;
+            const email = document.getElementById('newsletter-email').value;
 
             fetch('https://script.google.com/macros/s/AKfycbwqYtQy9TugvsyBcUXxJu5hPHePyfC-A3bXlDlL0vj5MqZUwsqVhH8ouXiRsHpuGM3N/exec', {
                 method: 'POST',
@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const productId = productCard.data('id');
             const productName = productCard.data('name');
             const productPrice = productCard.data('price');
+            const productImage = productCard.find('img').attr('src'); // Get the product image URL
 
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
             const existingProduct = cart.find(product => product.id === productId);
@@ -81,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (existingProduct) {
                 existingProduct.quantity += 1;
             } else {
-                cart.push({ id: productId, name: productName, price: productPrice, quantity: 1 });
+                cart.push({ id: productId, name: productName, price: productPrice, image: productImage, quantity: 1 });
             }
 
             localStorage.setItem('cart', JSON.stringify(cart));
@@ -109,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const productElement = document.createElement('div');
                 productElement.classList.add('cart-item');
                 productElement.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
                     <p>${product.name} - $${product.price} x ${product.quantity}</p>
                 `;
                 cartContent.appendChild(productElement);
