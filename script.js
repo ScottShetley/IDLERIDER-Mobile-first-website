@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         // Add to cart functionality
-        $('.add-to-cart').on('click', function() {
+        $('.add-to-cart').off('click').on('click', function() {
             const productCard = $(this).closest('.product-card');
             const productId = productCard.data('id');
             const productName = productCard.data('name');
@@ -85,8 +85,40 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             localStorage.setItem('cart', JSON.stringify(cart));
-            alert(`${productName} has been added to your cart.`);
+            updateCartContent();
+            openCartWindow();
         });
+
+        // Handle close cart button click
+        document.getElementById('close-cart').addEventListener('click', function() {
+            closeCartWindow();
+        });
+
+        // Update cart content
+        function updateCartContent() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartContent = document.querySelector('.cart-content');
+            cartContent.innerHTML = '';
+
+            cart.forEach(product => {
+                const productElement = document.createElement('div');
+                productElement.classList.add('cart-item');
+                productElement.innerHTML = `
+                    <p>${product.name} - $${product.price} x ${product.quantity}</p>
+                `;
+                cartContent.appendChild(productElement);
+            });
+        }
+
+        // Open cart window
+        function openCartWindow() {
+            document.getElementById('cart-window').classList.add('open');
+        }
+
+        // Close cart window
+        function closeCartWindow() {
+            document.getElementById('cart-window').classList.remove('open');
+        }
     } else {
         console.error("jQuery is not loaded");
     }

@@ -528,3 +528,72 @@ footer .social-media a {
         gap: 0.5em; /* Adjust gap between form elements for very small screens */
     }
 }
+
+/* Sliding Cart Window Styles */
+.cart-window {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background-color: #0c0d3b;
+    color: #fff;
+}
+
+.cart-header h2 {
+    margin: 0;
+}
+
+.close-cart {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.cart-content {
+    flex: 1;
+    padding: 1em;
+    overflow-y: auto;
+}
+
+.cart-footer {
+    padding: 1em;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-button {
+    padding: 0.5em 1em;
+    background-color: #0c0d3b;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    flex: 1;
+    margin: 0 0.5em;
+}
+
+.cart-button:hover {
+    background-color: #333;
+}
+
+/* Show the cart window */
+.cart-window.open {
+    right: 0;
+}
