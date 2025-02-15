@@ -100,6 +100,11 @@ document.addEventListener('DOMContentLoaded', function () {
             clearCart();
         });
 
+        // Handle view cart button click
+        document.getElementById('view-cart').addEventListener('click', function() {
+            window.location.href = 'cart.html'; // Redirect to the cart page
+        });
+
         // Update cart content
         function updateCartContent() {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
