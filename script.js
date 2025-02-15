@@ -118,11 +118,13 @@ document.addEventListener('DOMContentLoaded', function () {
         // Open cart window
         function openCartWindow() {
             document.getElementById('cart-window').classList.add('open');
+            document.getElementById('cart-overlay').classList.add('active'); // Show overlay
         }
 
         // Close cart window
         function closeCartWindow() {
             document.getElementById('cart-window').classList.remove('open');
+            document.getElementById('cart-overlay').classList.remove('active'); // Hide overlay
         }
 
         // Clear cart
