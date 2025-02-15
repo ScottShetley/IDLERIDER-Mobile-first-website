@@ -401,6 +401,13 @@ footer .social-media a {
     }
 }
 
+/* Hide the "Home" button on mobile devices */
+@media (max-width: 768px) {
+    #nav-menu li:first-child {
+        display: none;
+    }
+}
+
 /* Back to top button */
 .back-to-top {
     display: none; /* Hidden by default */
