@@ -3,8 +3,8 @@ body {
     font-family: 'Anton', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
-    color: #0c0d3b;
+    background-color: #ffffff; /* White background */
+    color: #0c0d3b; /* Dark blue text */
 }
 
 .header-container {
@@ -13,11 +13,11 @@ body {
     align-items: center;
     padding: 10px;
     background-color: #0c0d3b; /* Dark blue */
-    color: #fff;
+    color: #ffffff; /* White text */
 }
 
 .logo h1 a {
-    color: #fff;
+    color: #ffffff; /* White text */
     text-decoration: none;
     font-size: 1.5em; /* Adjust the logo size */
 }
@@ -34,7 +34,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #ffffff; /* White text */
     text-decoration: none;
 }
 
@@ -50,7 +50,6 @@ nav ul li a {
 .header-icons img {
     width: 24px;
     height: 24px;
-   
 }
 
 /* Full screen sections */
@@ -71,7 +70,7 @@ header {
     align-items: center;
     padding: 10px 20px; /* Adjust padding for better spacing */
     background-color: #0c0d3b; /* Dark blue */
-    color: #fff;
+    color: #ffffff; /* White text */
     position: sticky;
     top: 0;
     z-index: 1000; /* Ensure it stays on top of other content */
@@ -84,7 +83,7 @@ header .logo h1 {
 }
 
 header .logo h1 a {
-    color: #fff;
+    color: #ffffff; /* White text */
     text-decoration: none;
 }
 
@@ -108,7 +107,7 @@ header .logo h1 a {
 }
 
 #nav-menu ul li a {
-    color: #fff; /* Ensure the same color as the header */
+    color: #ffffff; /* White text */
     text-decoration: none;
     font-size: 16px;
     padding: 10px;
@@ -125,7 +124,7 @@ header nav ul {
 }
 
 header nav ul li a {
-    color: #ffffff;
+    color: #ffffff; /* White text */
     text-decoration: none;
     font-size: 1.25em;
     padding: 0.65em 0.9em;
@@ -159,7 +158,7 @@ header nav ul li a {
 .hero-text {
     position: relative;
     z-index: 1;
-    color: white;
+    color: #ffffff; /* White text */
     padding: 0 1em;
     display: flex;
     flex-direction: column;
@@ -170,15 +169,15 @@ header nav ul li a {
     font-family: 'Anton', sans-serif;
     font-size: 3em;
     margin-bottom: 0.5em;
-    background-color: rgba(128, 128, 128, 0.7); /* Semi-transparent grey background */
+    background-color: rgba(204, 204, 204, 0.7); /* Semi-transparent grey background */
     padding: 0.5em 1em;
     border-radius: 5px;
-    text-shadow: 3px 3px 5px #0c0d3b;
+    text-shadow: 3px 3px 5px #0c0d3b; /* Dark blue shadow */
 }
 
 #hero p {
     font-size: 1.2em;
-    background-color: rgba(128, 128, 128, 0.7); /* Semi-transparent grey background */
+    background-color: rgba(204, 204, 204, 0.7); /* Semi-transparent grey background */
     padding: 0.5em 1em;
     border-radius: 5px;
     margin-top: 1em; /* Add margin-top to create space between h1 and p */
@@ -187,8 +186,8 @@ header nav ul li a {
 #hero button {
     padding: 0.5em 1em;
     font-size: 1em;
-    background-color: #0c0d3b;
-    color: #ffffff;
+    background-color: #0c0d3b; /* Dark blue background */
+    color: #ffffff; /* White text */
     border: none;
     cursor: pointer;
     margin-top: 1em;
@@ -257,7 +256,7 @@ header nav ul li a {
 }
 
 .product-card {
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc; /* Grey border */
     padding: 10px;
     text-align: center;
     width: 100%; /* Ensure the product card takes full width of the grid column */
@@ -283,8 +282,8 @@ header nav ul li a {
 .product-card button {
     padding: 0.5em 1em;
     font-size: 1em;
-    background-color: #0c0d3b;
-    color: #ffffff;
+    background-color: #0c0d3b; /* Dark blue background */
+    color: #ffffff; /* White text */
     border: none;
     cursor: pointer;
 }
@@ -295,7 +294,7 @@ header nav ul li a {
     top: 10px;
     right: 10px;
     background-color: red;
-    color: #fff;
+    color: #ffffff; /* White text */
     padding: 5px;
     font-size: 12px;
 }
@@ -345,15 +344,15 @@ header nav ul li a {
 #contact form textarea {
     padding: 0.5em;
     font-size: 1em;
-    border: 1px solid #cccccc;
+    border: 1px solid #cccccc; /* Grey border */
     border-radius: 5px;
 }
 
 #contact form button {
     padding: 0.5em 1em;
     font-size: 1em;
-    background-color: #0c0d3b;
-    color: #ffffff;
+    background-color: #0c0d3b; /* Dark blue background */
+    color: #ffffff; /* White text */
     border: none;
     cursor: pointer;
 }
@@ -362,12 +361,12 @@ header nav ul li a {
 footer {
     text-align: center;
     padding: 1em;
-    background-color: #0c0d3b;
-    color: #ffffff;
+    background-color: #0c0d3b; /* Dark blue background */
+    color: #ffffff; /* White text */
 }
 
 footer .social-media a {
-    color: #ffffff;
+    color: #ffffff; /* White text */
     text-decoration: none;
     margin: 0 0.5em;
 }
@@ -414,8 +413,8 @@ footer .social-media a {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #333;
-    color: #fff;
+    background-color: #333; /* Darker grey background */
+    color: #ffffff; /* White text */
     border: none;
     padding: 10px 20px;
     cursor: pointer;
@@ -423,7 +422,7 @@ footer .social-media a {
 }
 
 .back-to-top:hover {
-    background-color: #555;
+    background-color: #555; /* Darker grey for hover state */
 }
 
 /* Show the button when scrolling down */
@@ -448,7 +447,7 @@ footer .social-media a {
 }
 
 .slick-loading .slick-list {
-    background: url('images/ajax-loader.gif') center center no-repeat #fff; /* Ensure this path matches the location of the image */
+    background: url('images/ajax-loader.gif') center center no-repeat #ffffff; /* White background */
 }
 
 /* Ensure the newsletter section is visible */
@@ -491,15 +490,15 @@ footer .social-media a {
 #newsletter form textarea {
     padding: 0.5em;
     font-size: 1em;
-    border: 1px solid #cccccc;
+    border: 1px solid #cccccc; /* Grey border */
     border-radius: 5px;
 }
 
 #newsletter form button {
     padding: 0.5em 1em;
     font-size: 1em;
-    background-color: #0c0d3b;
-    color: #ffffff;
+    background-color: #0c0d3b; /* Dark blue background */
+    color: #ffffff; /* White text */
     border: none;
     cursor: pointer;
 }
@@ -529,19 +528,20 @@ footer .social-media a {
     }
 }
 
-/* Sliding Cart Window Styles */
+/* Enhanced Sliding Cart Window Styles */
 .cart-window {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 300px;
+    width: 350px;
     height: 100%;
-    background-color: #fff;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    background-color: #ffffff; /* White background color */
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5); /* Add shadow */
     transition: right 0.3s ease;
     z-index: 1000;
     display: flex;
     flex-direction: column;
+    border-left: 2px solid #0c0d3b; /* Dark blue border */
 }
 
 .cart-header {
@@ -549,8 +549,9 @@ footer .social-media a {
     justify-content: space-between;
     align-items: center;
     padding: 1em;
-    background-color: #0c0d3b;
-    color: #fff;
+    background-color: #0c0d3b; /* Dark blue background color */
+    color: #ffffff; /* White text color */
+    font-size: 1.2em; /* Larger font size */
 }
 
 .cart-header h2 {
@@ -560,7 +561,7 @@ footer .social-media a {
 .close-cart {
     background: none;
     border: none;
-    color: #fff;
+    color: #ffffff; /* White text color */
     font-size: 1.5em;
     cursor: pointer;
 }
@@ -569,28 +570,30 @@ footer .social-media a {
     flex: 1;
     padding: 1em;
     overflow-y: auto;
+    font-size: 1em; /* Standard font size */
 }
 
 .cart-footer {
     padding: 1em;
-    background-color: #f9f9f9;
+    background-color: #cccccc; /* Grey background color */
     display: flex;
     justify-content: space-between;
 }
 
 .cart-button {
     padding: 0.5em 1em;
-    background-color: #0c0d3b;
-    color: #fff;
+    background-color: #0c0d3b; /* Dark blue background color */
+    color: #ffffff; /* White text color */
     border: none;
     cursor: pointer;
     text-align: center;
     flex: 1;
     margin: 0 0.5em;
+    font-size: 1em; /* Standard font size */
 }
 
 .cart-button:hover {
-    background-color: #333;
+    background-color: #333; /* Darker grey for hover state */
 }
 
 /* Show the cart window */

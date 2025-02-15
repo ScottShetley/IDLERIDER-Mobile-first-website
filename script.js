@@ -94,6 +94,11 @@ document.addEventListener('DOMContentLoaded', function () {
             closeCartWindow();
         });
 
+        // Handle clear cart button click
+        document.getElementById('clear-cart').addEventListener('click', function() {
+            clearCart();
+        });
+
         // Update cart content
         function updateCartContent() {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -118,6 +123,13 @@ document.addEventListener('DOMContentLoaded', function () {
         // Close cart window
         function closeCartWindow() {
             document.getElementById('cart-window').classList.remove('open');
+        }
+
+        // Clear cart
+        function clearCart() {
+            localStorage.removeItem('cart');
+            updateCartContent();
+            closeCartWindow();
         }
     } else {
         console.error("jQuery is not loaded");
