@@ -619,6 +619,7 @@ footer .social-media a {
     padding: 1em;
     overflow-y: auto;
     font-size: 1em; /* Standard font size */
+    max-height: 60vh; /* Limit the height to ensure buttons are visible */
 }
 
 .cart-item {
@@ -640,6 +641,9 @@ footer .social-media a {
     background-color: #cccccc; /* Grey background color */
     display: flex;
     justify-content: space-between;
+    position: sticky; /* Make footer sticky */
+    bottom: 0; /* Stick to the bottom */
+    width: 100%; /* Full width */
 }
 
 .cart-button {
@@ -677,4 +681,51 @@ footer .social-media a {
 
 .cart-overlay.open {
     display: block;
+}
+
+/* Cart Page Styles */
+.cart-content {
+    padding: 1em;
+    max-height: 60vh; /* Limit the height to ensure buttons are visible */
+    overflow-y: auto; /* Add scroll if content exceeds max height */
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 1em;
+    border: 1px solid #cccccc; /* Grey border */
+    border-radius: 5px;
+}
+
+.cart-footer {
+    padding: 1em;
+    background-color: #cccccc; /* Grey background color */
+    display: flex;
+    justify-content: space-between;
+    position: sticky; /* Make footer sticky */
+    bottom: 0; /* Stick to the bottom */
+    width: 100%; /* Full width */
+}
+
+.cart-button {
+    padding: 0.5em 1em;
+    background-color: #0c0d3b; /* Dark blue background color */
+    color: #ffffff; /* White text color */
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    flex: 1;
+    margin: 0 0.5em;
+    font-size: 1em; /* Standard font size */
+}
+
+.cart-button:hover {
+    background-color: #333; /* Darker grey for hover state */
 }

@@ -1,6 +1,4 @@
-// Combined functionality for lightbox, hamburger menu, and form submission
 document.addEventListener('DOMContentLoaded', function () {
-    // Ensure jQuery is available
     if (window.jQuery) {
         // Handle contact form submission
         document.getElementById('contact-form').addEventListener('submit', function(event) {
@@ -103,6 +101,11 @@ document.addEventListener('DOMContentLoaded', function () {
         // Handle view cart button click
         document.getElementById('view-cart').addEventListener('click', function() {
             window.location.href = 'cart.html'; // Redirect to the cart page
+        });
+
+        // Handle checkout button click
+        document.getElementById('checkout').addEventListener('click', function() {
+            window.location.href = 'checkout.html'; // Redirect to the checkout page
         });
 
         // Update cart content
