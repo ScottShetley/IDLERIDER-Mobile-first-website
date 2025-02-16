@@ -10,26 +10,37 @@ document.addEventListener('DOMContentLoaded', () => {
                 navMenu.classList.remove('show');
             });
         });
+    } else {
+        console.error('Navigation menu element not found');
     }
 
     const backToTopButton = document.getElementById('back-to-top');
 
-    backToTopButton.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    if (backToTopButton) {
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
-    });
 
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
-            backToTopButton.style.display = 'block';
-        } else {
-            backToTopButton.style.display = 'none';
-        }
-    });
-});
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+    } else {
+        console.error('Back to top button not found');
+    }
 
-document.addEventListener('DOMContentLoaded', function() {
-    // No additional JavaScript needed for the sticky navigation bar
+    const someElement = document.getElementById('some-element-id');
+    if (someElement) {
+        someElement.addEventListener('click', function() {
+            // Your event handler code here
+        });
+    } else {
+        console.error('Element with ID "some-element-id" not found');
+    }
 });

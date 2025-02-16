@@ -143,6 +143,9 @@ document.addEventListener('DOMContentLoaded', function () {
             updateCartContent();
             closeCartWindow();
         }
+
+        // Initialize cart content on page load
+        updateCartContent();
     } else {
         console.error("jQuery is not loaded");
     }
